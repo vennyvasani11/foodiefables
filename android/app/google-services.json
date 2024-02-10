@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "14773163664",
+    "project_id": "foodie-fables",
+    "storage_bucket": "foodie-fables.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14773163664:android:b7bbbca705879707ef2a15",
+        "android_client_info": {
+          "package_name": "com.app.foodiefables"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14773163664-7risdag0976p3lsiauc61n7tf9ug79aj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.foodiefables",
+            "certificate_hash": "8feed5e41a4a7d5777d0baa2ce709c4e89061887"
+          }
+        },
+        {
+          "client_id": "14773163664-q3jtqomau622o6cstrf98g1047pv92j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpg2ngGTFZfV3WIbZhVlZBD-eqg_oUukg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14773163664-q3jtqomau622o6cstrf98g1047pv92j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
