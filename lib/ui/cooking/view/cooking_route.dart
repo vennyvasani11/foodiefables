@@ -47,7 +47,7 @@ class _CookingRouteState extends State<CookingRoute>
   @override
   Widget build(BuildContext context) {
     final Animation<double> animation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(
+        Tween<double>(begin: 0.1, end: 1.0).animate(
       CurvedAnimation(
         parent: animationController!,
         curve: Interval((1 / 10) * 1, 1.0, curve: Curves.fastOutSlowIn),
@@ -64,10 +64,10 @@ class _CookingRouteState extends State<CookingRoute>
                 animation: animationController!,
                 builder: (BuildContext context, Widget? child) {
                   return FadeTransition(
-                    opacity: animation!,
+                    opacity: animation,
                     child: Transform(
                       transform: Matrix4.translationValues(
-                          0.0, 50 * (1.0 - animation!.value), 0.0),
+                          0.0, 50 * (1.0 - animation.value), 0.0),
                       child: AspectRatio(
                         aspectRatio: 1.5,
                         child: Image.asset(
@@ -157,7 +157,7 @@ class _CookingRouteState extends State<CookingRoute>
                     opacity: animation!,
                     child: Transform(
                         transform: Matrix4.translationValues(
-                            0.0, 60 * (1.0 - animation!.value), 0.0),
+                            0.0, 60 * (1.0 - animation.value), 0.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

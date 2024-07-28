@@ -29,24 +29,20 @@ class _FoodCategoryRouteState extends State<FoodCategoryRoute>
 
   @override
   void initState() {
-    visibleList.add(CategoryData(false, "cake"));
-    visibleList.add(CategoryData(false, "cake"));
-    visibleList.add(CategoryData(false, "cake"));
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
-
-    visibleList.add(CategoryData(false, "cake"));
+    visibleList.add(CategoryData(false, "Bread", "bread.svg"));
+    visibleList.add(CategoryData(false, "Butter", "butter.svg"));
+    visibleList.add(CategoryData(false, "Cake", "cake.svg"));
+    visibleList.add(CategoryData(false, "Cheese", "cheese.svg"));
+    visibleList.add(CategoryData(false, "Chicken", "chicken.svg"));
+    visibleList.add(CategoryData(false, "Chocolate", "chocolate.svg"));
+    visibleList.add(CategoryData(false, "Cookie", "cookie.svg"));
+    visibleList.add(CategoryData(false, "Drink", "dink.svg"));
+    visibleList.add(CategoryData(false, "Egg", "egg.svg"));
+    visibleList.add(CategoryData(false, "Fre. Fires", "frenchfries.svg"));
+    visibleList.add(CategoryData(false, "Ice cream", "icecream.svg"));
+    visibleList.add(CategoryData(false, "Meat", "meat.svg"));
+    visibleList.add(CategoryData(false, "Potato", "potato.svg"));
+    visibleList.add(CategoryData(false, "Salad", "salad.svg"));
 
     animationController = AnimationController(
         duration: const Duration(milliseconds: 3000), vsync: this);
@@ -88,7 +84,7 @@ class _FoodCategoryRouteState extends State<FoodCategoryRoute>
                       opacity: animation!,
                       child: Transform(
                         transform: Matrix4.translationValues(
-                            0.0, 50 * (1.0 - animation!.value), 0.0),
+                            0.0, 50 * (1.0 - animation.value), 0.0),
                         child: AspectRatio(
                           aspectRatio: 1.4,
                           child: Image.asset(
@@ -176,23 +172,23 @@ class _FoodCategoryRouteState extends State<FoodCategoryRoute>
                       crossAxisCount: 2),
                   itemBuilder: (context, index) {
                     var item = visibleList[index];
+                    final int count =
+                        visibleList.length > 10 ? 10 : visibleList.length;
                     final Animation<double> animation =
                         Tween<double>(begin: 0.0, end: 1.0).animate(
-                      CurvedAnimation(
-                        parent: animationController!,
-                        curve: Interval((1 / 10) * index, 1.0,
-                            curve: Curves.fastOutSlowIn),
-                      ),
-                    );
+                            CurvedAnimation(
+                                parent: animationController!,
+                                curve: Interval((1 / count) * index, 1.0,
+                                    curve: Curves.fastOutSlowIn)));
                     animationController?.forward();
                     return AnimatedBuilder(
                       animation: animationController!,
                       builder: (BuildContext context, Widget? child) {
                         return FadeTransition(
-                          opacity: animation!,
+                          opacity: animation,
                           child: Transform(
                             transform: Matrix4.translationValues(
-                                0.0, 100 * (1.0 - animation!.value), 0.0),
+                                0.0, 100 * (1.0 - animation.value), 0.0),
                             child: InkWell(
                               onTap: () {
                                 setState(() {
@@ -232,9 +228,9 @@ class _FoodCategoryRouteState extends State<FoodCategoryRoute>
                                               spreadRadius: 10,
                                               blurRadius: 15)
                                         ],
-                                        image: DecorationImage(
-                                            image: AssetImage(
-                                                "${Constants.assetImage}ic_food.png")),
+                                        // image: DecorationImage(
+                                        //     image: AssetImage(
+                                        //         "${Constants.assetImage}ic_food.png")),
                                         borderRadius: BorderRadius.all(
                                             Radius.elliptical(20, 50)),
                                         border: Border.all(
@@ -242,13 +238,19 @@ class _FoodCategoryRouteState extends State<FoodCategoryRoute>
                                             color: item.isSelected
                                                 ? AppTheme.white
                                                 : AppTheme.darkGrey)),
+                                    child: Center(
+                                      child: SvgPicture.asset(
+                                        Constants.categoryImage + item.image,
+                                        height: 80,width: 80,
+                                      ),
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 5,
                                   ),
                                   Text(
-                                    "Chocolate",
-                                    style: AppUtils.textWhitePoppinsMedium16,
+                                    item.title,
+                                    style:item.isSelected? AppUtils.textWhitePoppinsMedium16: AppUtils.textgreyPoppinsMedium16,
                                   )
                                 ],
                               ),

@@ -16,6 +16,8 @@ class Constants {
   static const prefLogin = 'pref_login';
 
   static const assetImage = 'asset/images/';
+    static const categoryImage = 'asset/categoryimage/';
+
   static const assetIcon = 'asset/icons/';
   static const assetRoot = 'asset/';
 

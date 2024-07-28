@@ -1,0 +1,29 @@
+key store path: C:\All project\foodiefables\android\app\foodiefables.jks
+
+key store password: foodiefables@1123
+
+===============================================================
+key alias: foodiefables
+
+key password: foodiefables@1123
+
+===============================================================
+Google play console
+
+App Name: Foodie Fables
+Password: cdic eyrb hrvn qskl
+
+
+==================================================
+AdMob App ID
+
+ca-app-pub-6334779689731772~1420309090
+
+==================================================
+(AdMob App ID)
+
+AdMob ad unit ID  (Banner)
+
+ca-app-pub-6334779689731772/1366955316
+==================================================
+

@@ -118,6 +118,18 @@ class AppUtils {static toastMessage(String message) {
       color: AppTheme.white,
       fontWeight: FontWeight.w500,
       fontSize: 16);
+  static TextStyle textsecondaryPoppinsMedium16 = const TextStyle(
+      fontFamily: "Poppins",
+      color: AppTheme.secondary,
+      fontWeight: FontWeight.w500,
+      fontSize: 16);
+ static TextStyle textgreyPoppinsMedium16 =  TextStyle(
+      fontFamily: "Poppins",
+      color: AppTheme.lightGrey.withOpacity(0.2),
+      fontWeight: FontWeight.w500,
+      fontSize: 16);
+
+
 
   static TextStyle textWhitePoppinsMedium18 = const TextStyle(
       fontFamily: "Poppins",

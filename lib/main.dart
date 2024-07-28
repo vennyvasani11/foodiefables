@@ -29,11 +29,13 @@ import 'package:foodiefables/ui/notification/binding/notification_binding.dart';
 import 'package:foodiefables/ui/profile/binding/profile_binding.dart';
 import 'package:foodiefables/ui/saved_recipe/binding/saved_recipe_biinding.dart';
 import 'package:foodiefables/ui/search/binding/search_binding.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+MobileAds.instance.initialize();
 
   await PushNotificationService().setupInteractedMessage();
 

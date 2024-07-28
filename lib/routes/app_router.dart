@@ -10,18 +10,19 @@ class AppRouter {
   }
 
   static onBoarding() {
-    Get.offAllNamed(Routes.ONBOARDING);
+    Get.toNamed(Routes.ONBOARDING);
   }
+
   static login() {
-    Get.offAllNamed(Routes.LOGIN);
+    Get.toNamed(Routes.LOGIN);
   }
 
   static cooking() {
-    Get.offAllNamed(Routes.COOKING);
+    Get.toNamed(Routes.COOKING);
   }
 
   static foodCategory() {
-    Get.offAllNamed(Routes.FOODCATEGORY);
+    Get.toNamed(Routes.FOODCATEGORY);
   }
 
   static home(List<RecipeItem> allRecipeList, todayrecipeList,

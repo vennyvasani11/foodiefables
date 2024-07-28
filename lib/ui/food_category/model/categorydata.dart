@@ -5,8 +5,9 @@ class CategoryData{
 
   final bool visible;
   final String title;
+  final String image;
 
-  CategoryData(this.visible, this.title);
+  CategoryData(this.visible, this.title, this.image);
 
 
 

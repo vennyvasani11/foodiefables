@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:foodiefables/Repository/home_repository.dart';
+import 'package:foodiefables/service/ad_helper.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
@@ -42,13 +43,10 @@ class SplashController extends GetxController with GetTickerProviderStateMixin {
 
     var _allCategoryList = RxList<CategoryItem>();
   List<CategoryItem> get allCategoryList => _allCategoryList.value;
+AdHelper ads= AdHelper();   // Upar na class no object banavo ads name no
 
   @override
   void onInit() {
-
-
-
-    
     getAllRecipe();
     getTodayRecipe();
     getAllCateogry();
@@ -62,7 +60,12 @@ class SplashController extends GetxController with GetTickerProviderStateMixin {
     return true;
   }
 
-  getAllRecipe() async {
+@override
+void onClose(){
+    ads.getBannerAd()..dispose();
+}
+
+   getAllRecipe() async {
     AppUtils.isConnected().then((intenet) async {
       if (intenet != null && intenet) {
         _status.value = RxStatus.loading();

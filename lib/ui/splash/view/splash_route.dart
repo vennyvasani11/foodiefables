@@ -6,6 +6,7 @@ import 'package:foodiefables/utils/app_utils.dart';
 import 'package:foodiefables/widget/background_image.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../routes/app_router.dart';
 
@@ -69,6 +70,17 @@ class SplashRoute extends GetView<SplashController> {
           ),
         ],
       );
-    }));
+    }),bottomNavigationBar: bannerAD(),);
   }
+
+
+  bannerAD(){  // aa function pase ads che jene jay call karavo tya ads aapse
+  return SizedBox(
+    height: 60, // adSize paramane chenge karvi pade
+    child: AdWidget(
+      ad: controller.ads.getBannerAd()..load(),  // AdWidget maj ads show thay mate ani ad proprty ne add aapi( ads ma getBannerAd maje ads che aane load karo ! )
+      key: UniqueKey(),
+    )
+  );
+}
 }
